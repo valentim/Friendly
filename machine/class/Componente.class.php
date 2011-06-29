@@ -7,7 +7,6 @@
  */
 abstract class Componente {
 	protected $name;
-	protected $word;
 	public function getName() {
 		$this->name = __CLASS__;
 	}

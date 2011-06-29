@@ -1,14 +1,16 @@
 <?php
 
-require_once ('Componente.class.php');
+require_once ('Decorator.class.php');
 
 /** 
  * @author Thiago Valentim
  * 
  * 
  */
-class Expressao extends Componente {
-
+class Expressao extends Decorator {
+	public function setWord($w) {
+		$this->word = $w;
+	}
 }
 
 ?>

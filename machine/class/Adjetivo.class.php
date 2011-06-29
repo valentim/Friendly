@@ -8,12 +8,8 @@ require_once ('Decorator.class.php');
  * 
  */
 class Adjetivo extends Decorator {
-	public function getWord() {
-		return $this->word;
-	}
-	
-	public function getCmp() {
-		return $this->cmp;
+	public function setWord($w) {
+		$this->word = $w;
 	}
 }
 

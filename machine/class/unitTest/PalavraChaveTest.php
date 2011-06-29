@@ -1,8 +1,7 @@
 <?php
 
-require_once 'Robo/PalavraChave.class.php';
-
-require_once 'PHPUnit/Framework.php';
+require_once 'PalavraChave.class.php';
+require_once 'PHPUnit/Autoload.php';
 
 /**
  * PalavraChave test case.
@@ -28,7 +27,11 @@ class PalavraChaveTest extends PHPUnit_Framework_TestCase {
 	}
 	public function testRequest() {
 		$request = $this->PalavraChave->request = true;
-		$this->assertFalse($request, "True");
+		$this->assertTrue($request);
+	}
+	
+	public function testGetKeyWord() {
+		$this->assertInternalType('string', $this->PalavraChave->getKeyWord());
 	}
 	
 	/**
@@ -48,19 +51,7 @@ class PalavraChaveTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function __construct() {
 		// TODO Auto-generated constructor
-	}
-	
-	/**
-	 * Tests PalavraChave->__construct()
-	 */
-	public function test__construct() {
-		// TODO Auto-generated PalavraChaveTest->test__construct()
-		$this->markTestIncomplete ( "__construct test not implemented" );
-		
-		$this->PalavraChave->__construct(/* parameters */);
-	
+		$this->PalavraChave = new PalavraChave("teste");
 	}
 	
 }
-$test  = new PalavraChaveTest();
-$test->testRequest();

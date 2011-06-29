@@ -18,16 +18,17 @@ class PalavraChave {
 		$this->keyWord = $keyWord;
 	}
 	
+	public function getKeyWord() {
+		return $this->keyWord;
+	}
+	
 	private function verifyContext() {
-		$this->request = $this->open($this->keyWord);
+		$this->request ;//= $this->open($this->keyWord);
 		
 		if($this->request) {
-			$addComp = new Sintaxe(new Adjetivo($cmp));
+			$addComp = new Sintaxe(1);
 			$sentence = new Mensagem($addComp);
 			$sentence->create();
-		}
-		
+		}		
 	}
 }
-
-?>

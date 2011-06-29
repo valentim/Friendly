@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Adjetivo.class.php';
+require_once 'Expressao.class.php';
 
 require_once 'PHPUnit/Autoload.php';
 
@@ -23,12 +24,16 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 		// TODO Auto-generated DecoratorTest::setUp()
 		
 
-		$this->Adjetivo = new Adjetivo();
+		$this->Adjetivo = new Adjetivo('bonito', new Adjetivo('feio'));
 	
 	}
 	
 	public function testCmp() {
-		$this->assertNull($this->Adjetivo->getCmp(), "Customizei");
+		$this->assertInstanceOf('Componente', $this->Adjetivo->getCmp());
+	}
+	
+	public function testMake() {
+		$this->assertInternalType('string', $this->Adjetivo->make());
 	}
 	
 	/**
@@ -48,7 +53,7 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function __construct() {
 		// TODO Auto-generated constructor
-		$this->Adjetivo = new Adjetivo('bonito', new Adjetivo('feio'));
+		$this->Adjetivo = new Adjetivo('bonito', new Adjetivo('feio', new Expressao('vale a pena ver denovo')));
 	}
 	
 	/**
@@ -56,13 +61,12 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testGetWord() {
 		// TODO Auto-generated DecoratorTest->testGetWord()
-		$this->markTestIncomplete ( "getWord test not implemented" );
+		//$this->markTestIncomplete ( "getWord test not implemented" );
 		
-		$this->assertNull($this->Adjetivo->getWord(/* parameters */));
+		$this->assertInternalType('string', $this->Adjetivo->getWord());
 		
 	
 	}
 
 }
-$test = new DecoratorTest();
-$test->testCmp();
+
