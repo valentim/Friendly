@@ -26,8 +26,7 @@ class PalavraChave {
 		$this->request ;//= $this->open($this->keyWord);
 		
 		if($this->request) {
-			$addComp = new Sintaxe(1);
-			$sentence = new Mensagem($addComp);
+			$sentence = new Mensagem(new Sintaxe(1));
 			$sentence->create();
 		}		
 	}
