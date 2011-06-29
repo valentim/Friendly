@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PalavraChave.class.php';
+require_once '../PalavraChave.class.php';
 require_once 'PHPUnit/Autoload.php';
 
 /**

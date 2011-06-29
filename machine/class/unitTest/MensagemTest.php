@@ -1,7 +1,8 @@
 <?php
 
-require_once 'Mensagem.class.php';
-require_once ('Sintaxe.class.php');
+require_once '../Mensagem.class.php';
+require_once '../Sintaxe.class.php';
+require_once 'PHPUnit/Autoload.php';
 
 /**
  * Mensagem test case.

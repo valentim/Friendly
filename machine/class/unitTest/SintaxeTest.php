@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Sintaxe.class.php';
+require_once '../Sintaxe.class.php';
 require_once 'PHPUnit/Autoload.php';
 /**
  * Sintaxe test case.

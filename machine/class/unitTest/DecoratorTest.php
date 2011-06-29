@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Adjetivo.class.php';
-require_once 'Expressao.class.php';
+require_once '../Adjetivo.class.php';
+require_once '../Expressao.class.php';
 
 require_once 'PHPUnit/Autoload.php';
 
