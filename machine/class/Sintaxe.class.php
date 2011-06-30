@@ -5,6 +5,12 @@
  * 
  * 
  */
+require_once ('../Verbo.class.php');
+require_once ('../Conectivos.class.php');
+require_once ('../Expressao.class.php');
+require_once ('../Adjetivo.class.php');
+require_once ('../PalavraChave.class.php');
+
 class Sintaxe {
 	private $sintaxe;
 	private $comp;
@@ -26,14 +32,14 @@ class Sintaxe {
 	}
 	
 	private function firstSentence() {
-		$this->comp = array('Conectivos', 'PalavraChave', 'Verbo', 'Expressao');
+		$this->comp = new Conectivos('A', new PalavraChave('paz', new Verbo('sobrepujará', new Expressao(', nos corações dos Homens.'))));
 	}
 	
 	private function secondSentence() {
-		$this->comp = array('PalavraChave', 'Expressao');
+		$this->comp = new PalavraChave(new Expressao());
 	}
 	
 	public function getSentence() {
-		return $this->comp;
+		return $this->comp->make();
 	}
 }

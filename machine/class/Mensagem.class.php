@@ -7,16 +7,22 @@
  */
 class Mensagem {
 	private $frase = null;
-	
+	private $twitter;
 
 	public function __construct(Sintaxe $f) {
 		$this->frase = $f;
+		$this->twitter = Twitter::getInstance();
 	}
-	public function getSentence() {
-		return $this->frase;
+	
+	public function getFrase() {
+		return $this->frase->getSentence();
 	}
+	
 	public function create() {
-		$this->frase = implode(" ", $this->frase->getSentence());
-		return $this->frase;
+		$this->twitter->makeMsg($this->frase->getSentence());
+	}
+	
+	public function getMsg() {
+		return $this->twitter->getMsg();
 	}
 }

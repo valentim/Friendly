@@ -10,7 +10,7 @@ abstract class Componente {
 	public function getName() {
 		$this->name = __CLASS__;
 	}
-	abstract function getWord();
+	abstract function make();
 }
 
 ?>

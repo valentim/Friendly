@@ -5,21 +5,26 @@ require_once ('Verbo.class.php');
 require_once ('Conectivos.class.php');
 require_once ('Expressao.class.php');
 require_once ('Adjetivo.class.php');
+require_once ('Twitter.class.php');
 /** 
  * @author Thiago Valentim
  * 
  * 
  */
-class PalavraChave {
-	private $keyWord = null;
+class PalavraChave extends Decorator {
 	public $request = false;
+	private $twitter;
 	
-	public function __construct($keyWord) {
-		$this->keyWord = $keyWord;
+	public function setWord($w) {
+		$this->word = $w;
 	}
 	
-	public function getKeyWord() {
-		return $this->keyWord;
+	public function make() {
+		return "{$this->word} {$this->cmp->make()}";
+	}
+	
+	private function open() {
+		
 	}
 	
 	private function verifyContext() {

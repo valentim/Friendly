@@ -30,8 +30,8 @@ class PalavraChaveTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($request);
 	}
 	
-	public function testGetKeyWord() {
-		$this->assertInternalType('string', $this->PalavraChave->getKeyWord());
+	public function testGetWord() {
+		$this->assertInternalType('string', $this->PalavraChave->getWord());
 	}
 	
 	/**

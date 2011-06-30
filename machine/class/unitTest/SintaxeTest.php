@@ -55,7 +55,7 @@ class SintaxeTest extends PHPUnit_Framework_TestCase {
 	public function testGetSentence() {
 		// TODO Auto-generated SintaxeTest->testGetSentence()
 		
-		$this->assertContains('PalavraChave', $this->Sintaxe->getSentence());
+		$this->assertInstanceOf('Componente', $this->Sintaxe->getSentence());
 	
 	}
 

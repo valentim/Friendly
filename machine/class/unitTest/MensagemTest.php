@@ -23,6 +23,7 @@ class MensagemTest extends PHPUnit_Framework_TestCase {
 		// TODO Auto-generated MensagemTest::setUp()
 		
 		$this->Mensagem = new Mensagem(new Sintaxe(1));
+		$this->Mensagem->create();
 	
 	}
 	
@@ -44,24 +45,19 @@ class MensagemTest extends PHPUnit_Framework_TestCase {
 	public function __construct() {
 		// TODO Auto-generated constructor
 		$this->Mensagem = new Mensagem(new Sintaxe(1));
+		$this->Mensagem->create();
 	}
-	
-	/**
-	 * Tests Mensagem->getSentence()
-	 */
-	public function testGetSentence() {
-		// TODO Auto-generated MensagemTest->testGetSentence()		
-		$this->assertInstanceOf('Sintaxe', $this->Mensagem->getSentence());
-	
-	}
-	
-	/**
-	 * Tests Mensagem->create()
-	 */
-	public function testCreate() {
+
+	public function testGetFrase() {
 		// TODO Auto-generated MensagemTest->testCreate()
-		$this->assertContains('PalavraChave', $this->Mensagem->create());
+		print_r($this->Mensagem->getFrase());
+		$this->assertInternalType('string', $this->Mensagem->getFrase());
 	
+	}
+	
+	public function testGetMsg() {
+		print_r($this->Mensagem->getMsg());
+		$this->assertInternalType('string', $this->Mensagem->getMsg());
 	}
 
 }

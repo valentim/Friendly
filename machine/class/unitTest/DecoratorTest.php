@@ -24,15 +24,12 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 		// TODO Auto-generated DecoratorTest::setUp()
 		
 
-		$this->Adjetivo = new Adjetivo('bonito', new Adjetivo('feio'));
+		$this->Adjetivo = new Adjetivo('bonito', new Adjetivo('feio', new Expressao('vale a pena ver denovo')));
 	
-	}
-	
-	public function testCmp() {
-		$this->assertInstanceOf('Componente', $this->Adjetivo->getCmp());
 	}
 	
 	public function testMake() {
+		echo $this->Adjetivo->make();
 		$this->assertInternalType('string', $this->Adjetivo->make());
 	}
 	
@@ -62,7 +59,7 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 	public function testGetWord() {
 		// TODO Auto-generated DecoratorTest->testGetWord()
 		//$this->markTestIncomplete ( "getWord test not implemented" );
-		
+
 		$this->assertInternalType('string', $this->Adjetivo->getWord());
 		
 	
