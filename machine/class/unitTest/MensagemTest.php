@@ -22,8 +22,7 @@ class MensagemTest extends PHPUnit_Framework_TestCase {
 		
 		// TODO Auto-generated MensagemTest::setUp()
 		
-		$this->Mensagem = new Mensagem(new Sintaxe(1));
-		$this->Mensagem->create();
+		$this->Mensagem = new Mensagem(new Sintaxe(1), 'paz');
 	
 	}
 	
@@ -44,8 +43,7 @@ class MensagemTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function __construct() {
 		// TODO Auto-generated constructor
-		$this->Mensagem = new Mensagem(new Sintaxe(1));
-		$this->Mensagem->create();
+		$this->Mensagem = new Mensagem(new Sintaxe(1), 'paz');
 	}
 
 	public function testGetFrase() {
@@ -58,6 +56,11 @@ class MensagemTest extends PHPUnit_Framework_TestCase {
 	public function testGetMsg() {
 		print_r($this->Mensagem->getMsg());
 		$this->assertInternalType('string', $this->Mensagem->getMsg());
+	}
+	
+	public function testGetWord() {
+		print_r($this->Mensagem->getWord());
+		$this->assertInternalType('string', $this->Mensagem->getWord());
 	}
 
 }

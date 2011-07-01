@@ -22,12 +22,9 @@ class PalavraChaveTest extends PHPUnit_Framework_TestCase {
 		// TODO Auto-generated PalavraChaveTest::setUp()
 		
 
-		$this->PalavraChave = new PalavraChave("teste");
+		$this->PalavraChave = new PalavraChave("test");
+		$this->PalavraChave->doWrite();
 	
-	}
-	public function testRequest() {
-		$request = $this->PalavraChave->request = true;
-		$this->assertTrue($request);
 	}
 	
 	public function testGetWord() {
@@ -51,7 +48,7 @@ class PalavraChaveTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function __construct() {
 		// TODO Auto-generated constructor
-		$this->PalavraChave = new PalavraChave("teste");
+		$this->PalavraChave = new PalavraChave("test");
 	}
 	
 }

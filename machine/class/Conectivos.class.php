@@ -8,10 +8,7 @@ require_once ('Decorator.class.php');
  * 
  */
 class Conectivos extends Decorator {
-	public function setWord($w) {
-		$this->word = $w;
-	}
-	
+
 	public function make() {
 		return "{$this->word} {$this->cmp->make()}";
 	}

@@ -32,7 +32,7 @@ class Sintaxe {
 	}
 	
 	private function firstSentence() {
-		$this->comp = new Conectivos('A', new PalavraChave('paz', new Verbo('sobrepujará', new Expressao(', nos corações dos Homens.'))));
+		$this->comp = new Conectivos('A', new PalavraChave('paz', new Verbo('permanecerá', new Expressao(', nos corações dos Homens.'))));
 	}
 	
 	private function secondSentence() {
