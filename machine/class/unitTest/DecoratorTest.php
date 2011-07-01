@@ -33,6 +33,11 @@ class DecoratorTest extends PHPUnit_Framework_TestCase {
 		$this->assertInternalType('string', $this->Adjetivo->make());
 	}
 	
+	public function testName() {
+		print_r($this->Adjetivo->getName());
+		$this->assertInternalType('string', $this->Adjetivo->getName());
+	}
+	
 	/**
 	 * Cleans up the environment after running a test.
 	 */

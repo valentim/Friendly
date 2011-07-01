@@ -8,7 +8,7 @@
 abstract class Componente {
 	protected $name;
 	public function getName() {
-		$this->name = __CLASS__;
+		return $this->name = get_class($this);
 	}
 	abstract function make();
 }
