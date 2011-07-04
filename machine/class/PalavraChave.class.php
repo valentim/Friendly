@@ -8,7 +8,9 @@ require_once ('Decorator.class.php');
  */
 class PalavraChave extends Decorator {
 
+	public function setWord() {}
+	
 	public function make() {
-		return "{$this->word} {$this->cmp->make()}";
+		return "{$this->getKeyWord()} {$this->cmp->make()}";
 	}
 }

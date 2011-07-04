@@ -5,6 +5,7 @@
  * 
  * 
  */
+require_once ('../Decorator.class.php');
 require_once ('../Verbo.class.php');
 require_once ('../Conectivos.class.php');
 require_once ('../Expressao.class.php');
@@ -32,7 +33,7 @@ class Sintaxe {
 	}
 	
 	private function firstSentence() {
-		$this->comp = new Conectivos('A', new PalavraChave('paz', new Verbo('permanecerá', new Expressao(', nos corações dos Homens.'))));
+		$this->comp = new Conectivos(null, new PalavraChave(null, new Verbo(null, new Expressao())));
 	}
 	
 	private function secondSentence() {

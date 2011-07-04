@@ -16,13 +16,14 @@ class PalavraTest extends PHPUnit_Framework_TestCase {
 		parent::setUp ();
 	
 		// TODO Auto-generated PalavraTest::setUp()
-		$this->Palavra = new Palavra("test");
+		$this->Palavra = Palavra::getInstance();
+		$this->Palavra->setWord('Amor');
 		$this->Palavra->doWrite();
 	
 	}
 	
 	public function testGetWord() {
-		$this->assertInternalType('string', $this->PalavraChave->getWord());
+		$this->assertInternalType('string', $this->Palavra->getWord());
 	}
 	/**
 	 * Cleans up the environment after running a test.
@@ -39,7 +40,8 @@ class PalavraTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function __construct() {
 		// TODO Auto-generated constructor
-		$this->Palavra = new Palavra("test");
+		$this->Palavra = Palavra::getInstance();
+		$this->Palavra->setWord('Amor');
 		$this->Palavra->doWrite();
 	}
 

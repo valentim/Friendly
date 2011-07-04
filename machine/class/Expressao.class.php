@@ -7,16 +7,16 @@ require_once ('Decorator.class.php');
  * 
  * 
  */
-class Expressao extends Componente {
-	public function __construct($w = null) {
-		$this->word = $w;
-	}
-	
-	public function getWord() {
-		return $this->word;
+class Expressao extends Decorator {
+
+	public function setWord() {
+		if(empty($this->word)) {
+			$this->word = $this->makeRequest();
+		}
 	}
 	
 	public function make() {
+		$this->setWord();
 		return "{$this->word}";
 	}
 }
